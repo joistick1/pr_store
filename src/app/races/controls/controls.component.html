@@ -1,0 +1,15 @@
+<button *ngIf="poniesAreAboutToFinish.value > 0 || raceLength < 2" [disabled]="raceRuns || (raceLength < 2)" (click)="startRace()"
+        class="btn start">Start Race</button>
+<button *ngIf="poniesAreAboutToFinish.value === 0 && (raceLength > 1)" (click)="toStart()"
+        class="btn start">To the start</button>
+<button *ngIf="!addPonyForm"
+        (click)="addPony()"
+        [disabled]="raceRuns"
+        class="btn add"> Add Pony </button>
+        
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" *ngIf="addPonyForm">
+  <span *ngIf="isNameValid && (box.dirty || box.touched)" class="name-error-tooltip">Such name already exists</span>
+  <input #box="ngModel" name="name" (keyup)="validateName(box.value)" placeholder="please type Pony name" ngModel required>
+  <button [disabled]="!f.valid || isNameValid" class="btn add" type="submit">Confirm</button>
+  <button *ngIf="addPonyForm" (click)="cancel()" class="btn cancel" >Cancel</button>
+</form>

@@ -1,0 +1,113 @@
+.race {
+    width: 90%;
+}
+
+.finish {
+    width: 9%;
+    background-color: #FFF;
+    background-size: 51px 51px;
+    background-position: 0 0, 25px 25px;
+    background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+                        linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+}
+.img-container {
+    width: 70px;
+    height: auto;
+    position: relative;
+    margin: 10px 0 20px 0;
+    border-radius: 30px;
+}
+.pony-img {
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+    border-radius: 30px;
+    position: relative;
+}
+.pony-popover:after, .pony-popover:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.pony-popover:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #88b7d5;
+	border-width: 7px;
+	margin-left: -7px;
+}
+.pony-popover:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #c2e1f5;
+	border-width: 8px;
+	margin-left: -8px;
+}
+.pony-popover {
+    display: none;
+    color: white;
+    width: auto;
+    height: 17px;
+    padding: 2px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    position: absolute;
+    top: -33px;
+    white-space: nowrap;
+    left: 0;
+    background: #88b7d5;
+    border: 1px solid #c2e1f5;
+}
+
+.img-container:hover > .pony-popover, .img-container:hover > .remove-pony{
+    display: block;
+}
+
+.remove-pony {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #d24646f5;
+    position: absolute;
+    font-size: 8px;
+    padding: 2px 0 1px 0;
+    right: 0;
+    top: 2px;
+    border: none;
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 812px) {
+    .img-container {
+        width: 41px;
+        border-width: 3px!Important;
+        margin: 0;
+    }
+
+    .show-scores {
+        font-size: 11px;
+    }
+
+    .finish {
+        width: 11%;
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+    }
+
+    .remove-pony {
+        width: 13px;
+        height: 13px;
+    }
+    .pony-popover {
+        font-size: 10px;
+        height: 12px;
+        top: -24px;
+    }
+}

@@ -1,0 +1,10 @@
+<div class="race" #raceFinish>
+  <div class="img-container" [ngStyle]="{left: startPos ? '0' : run, border: randomColor, top: randomTop}">
+    <img class="pony-img" [src]="race.src"> 
+    <span class="pony-popover"> {{ race.name }} ( {{ race.scores }} )</span>
+    <button *ngIf="!event"
+            (click)="removeRace(index)"
+            class="remove-pony">X</button>
+  </div>
+</div>
+<div (window:orientationchange)="changeOrientation($event)" class="finish"></div>

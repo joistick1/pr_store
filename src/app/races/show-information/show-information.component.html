@@ -1,0 +1,17 @@
+<div *ngIf="raceLength > 1" class="show-scores">
+  
+  <ul class="score-list">
+    <li>Score table</li>
+    <li *ngFor="let race of (racesState | async).races; let i = index">{{i+1}} place - {{race.name}}, with {{race.scores}} points</li>
+  </ul>
+  <ul   class="score-list">
+    <li>Current race {{raceResults}}</li>
+    <li *ngFor="let race of raceResultsArr; let i = index">
+      <span *ngIf="raceResultsArr">
+        {{race.name}} finishes {{race.place}}{{ordinalIndicator(race.place)}}  and gets {{race.points}} point(s)
+      </span>
+      </li>
+  </ul>
+  <p class="race-count">Races: {{ raceCount }}</p> <button (click)="reset()" class="btn cancel" >Reset game</button>
+</div>
+<div *ngIf="raceLength < 2" class="show-notification">Race Can't start with less than 2 Ponies</div> 

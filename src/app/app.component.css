@@ -1,0 +1,27 @@
+app-races {
+    height: 100%;
+    display: block;
+    position: relative;
+}
+.mobile-portrait {
+    color: red;
+    font-size: 30px;
+    font-family: monospace;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 433px) {
+    .mobile-portrait {
+        display: none;
+    }
+}

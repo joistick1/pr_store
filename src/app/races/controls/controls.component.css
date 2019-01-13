@@ -1,0 +1,56 @@
+.btn {
+    display: block;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    margin: 10px;
+    opacity: 1;
+    cursor: pointer;
+}
+.btn:disabled {
+    background-color: grey!important;
+    opacity: .7;
+}
+.btn.add {
+    background-color: #784a9a;
+}
+.btn.cancel {
+    background-color: #c73939;
+}
+.btn.start {
+    background-color: #477914;
+}
+.btn:hover {
+    opacity: .9;
+}
+
+form {
+    display: flex;
+    position: relative;
+}
+
+form input {
+    border-radius: 10px;
+    height: 35px;
+    border: 1px solid #c1b8b8;
+    padding-left: 5px;
+    align-self: center;
+}
+
+.name-error-tooltip {
+    position: absolute;
+    top: -10px;
+    color: red;
+    left: 4px;
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 812px) {
+    .btn {
+        width: 90px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
